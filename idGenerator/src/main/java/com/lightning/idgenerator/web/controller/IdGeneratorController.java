@@ -1,13 +1,11 @@
-package com.lightning.idgenerator;
+package com.lightning.idgenerator.web.controller;
 
 import com.lightning.idgenerator.util.SnowflakeIdGenerator;
 import com.lightning.web.bean.ResponseResult;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@EnableDiscoveryClient
 public class IdGeneratorController {
 
     private final SnowflakeIdGenerator generator = new SnowflakeIdGenerator(1, 1);

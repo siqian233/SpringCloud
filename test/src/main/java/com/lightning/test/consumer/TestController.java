@@ -24,6 +24,6 @@ public class TestController {
         if(hello.getCode() != 1 || id.getCode() != 1){
             return ResponseResult.error("调用服务失败").setData(hello.getData() + hello.getMsg() + " | " + id.getData() + id.getMsg());
         }
-        return ResponseResult.ok().setData(hello.getData() + hello.getMsg() + " | " + id.getData() + id.getMsg());
+        return ResponseResult.ok().setData(hello.getMsg() + " | " + id.getData());
     }
 }
