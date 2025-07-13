@@ -12,6 +12,7 @@
   <modules>
     <module>common</module>
       <module>testFeign</module>
+    <module>testFeign</module>
   </modules>
 
   <properties>

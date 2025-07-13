@@ -10,7 +10,7 @@
     <artifactId>testFeign</artifactId>
     <packaging>jar</packaging>
 
-    <name>testFeign</name>
+    <name>testFegin</name>
     <url>http://maven.apache.org</url>
 
     <properties>

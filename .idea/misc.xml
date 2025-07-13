@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/test/pom.xml" />
         <option value="$PROJECT_DIR$/aiAgent/pom.xml" />
         <option value="$PROJECT_DIR$/aiAengt/pom.xml" />
+        <option value="$PROJECT_DIR$/testFeign/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
