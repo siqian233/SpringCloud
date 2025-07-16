@@ -1,4 +1,5 @@
 package com.lightning.bean;
 
-public class ICourse {
+public interface ICourse {
+    void record();
 }
