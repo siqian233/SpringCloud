@@ -16,6 +16,7 @@
     <module>pro-gateway</module>
     <module>test</module>
     <module>testFeign</module>
+      <module>test-predicates-factorymethods</module>
   </modules>
 
   <properties>
