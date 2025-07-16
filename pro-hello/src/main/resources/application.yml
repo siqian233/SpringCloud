@@ -7,15 +7,27 @@ spring:
         server-addr: localhost:8848
         username: nacos
         password: nacos
+  config:
+    import:
+      - nacos:hello.yaml?refreshEnabled=true
+      - nacos:idGenerator.yml?refreshEnabled=true
+      - nacos:test.yml?refreshEnabled=true
 
 server:
   port: 8081
 
+# 监控
 management:
   endpoints:
     web:
       exposure:
         include: "*"
   endpoint:
+    gateway:
+      enabled: true
     health:
       show-details: always
+  simple:
+    metrics:
+      export:
+        enabled: true

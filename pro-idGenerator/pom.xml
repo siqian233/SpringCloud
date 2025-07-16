@@ -7,13 +7,13 @@
         <groupId>com.lightning</groupId>
         <artifactId>SpringCloud</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>idGenerator</artifactId>
+    <artifactId>pro-idGenerator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>idGenerator</name>
-    <description>idGenerator</description>
+    <name>pro-idGenerator</name>
+    <description>pro-idGenerator</description>
 
     <properties>
         <java.version>17</java.version>
@@ -22,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>com.lightning</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>pro-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

@@ -5,12 +5,14 @@
         <groupId>com.lightning</groupId>
         <artifactId>SpringCloud</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>common</artifactId>
+    <artifactId>pro-common</artifactId>
     <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
 
-    <name>common</name>
+    <name>pro-common</name>
     <url>http://maven.apache.org</url>
 
     <properties>

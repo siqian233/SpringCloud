@@ -1,0 +1,55 @@
+server:
+  port: 20001
+
+spring:
+  application:
+    name: res-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+    gateway:
+      routes:
+        - id: hello
+          uri: lb://hello
+          predicates:
+            - Path=/hello/**
+          filters:
+            - StripPrefix=1
+
+        - id: idGenerator
+          uri: lb://idGenerator
+          predicates:
+            - Path=/idGenerator/**
+          filters:
+            - StripPrefix=1
+
+        - id: test
+          uri: lb://test-consumer-service
+          predicates:
+            - Path=/test/**
+          filters:
+            - StripPrefix=1
+
+        - id: baidu
+          uri: https://www.baidu.com
+          predicates:
+            - Path=/**
+
+# 监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+    health:
+      show-details: always
+  simple:
+    metrics:
+      export:
+        enabled: true

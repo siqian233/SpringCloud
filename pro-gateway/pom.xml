@@ -7,10 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>testFeign</artifactId>
+    <artifactId>pro-gateway</artifactId>
     <packaging>jar</packaging>
 
-    <name>testFeign</name>
+    <name>pro-gateway</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -18,16 +18,24 @@
     </properties>
 
     <dependencies>
-        <!-- GitHub API 客户端依赖 -->
-        <dependency>
-            <groupId>org.kohsuke</groupId>
-            <artifactId>github-api</artifactId>
-            <version>1.304</version>
-
-        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
     </dependencies>
 </project>
