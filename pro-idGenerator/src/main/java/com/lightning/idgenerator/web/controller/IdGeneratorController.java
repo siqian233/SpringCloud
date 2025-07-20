@@ -10,7 +10,7 @@ public class IdGeneratorController {
 
     private final SnowflakeIdGenerator generator = new SnowflakeIdGenerator(1, 1);
 
-    @GetMapping("/idGenerate")
+    @GetMapping("/next")
     public ResponseResult generate() {
         return ResponseResult.ok().setData(generator.nextId());
     }

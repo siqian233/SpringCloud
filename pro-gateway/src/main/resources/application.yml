@@ -12,17 +12,32 @@ spring:
         password: nacos
     gateway:
       routes:
-        - id: hello
+        - id: hello-en
           uri: lb://hello
           predicates:
-            - Path=/hello/**
+            - Header=Accept-Language, en.*
           filters:
-            - StripPrefix=1
+            - RewritePath=/hello, /en
+
+        - id: hello-zh
+          uri: lb://hello
+          predicates:
+            - Header=Accept-Language, zh.*
+          filters:
+            - RewritePath=/hello, /zh
+
+        - id: hello-jp
+          uri: lb://hello
+          predicates:
+            - Header=Accept-Language, jp.*
+          filters:
+            - RewritePath=/hello, /jp
 
         - id: idGenerator
-          uri: lb://idGenerator
+          uri: lb://idGenerate
           predicates:
             - Path=/idGenerator/**
+            - TimeLimitBetween=06:00,22:00
           filters:
             - StripPrefix=1
 
@@ -37,6 +52,14 @@ spring:
           uri: https://www.baidu.com
           predicates:
             - Path=/**
+
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
 
 # 监控
 management:
@@ -53,3 +76,6 @@ management:
     metrics:
       export:
         enabled: true
+
+token:
+  secret: a-string-secret-at-least-256-bits-long
